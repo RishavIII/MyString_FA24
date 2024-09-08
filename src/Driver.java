@@ -42,42 +42,42 @@ public class Driver {
 
 		System.out.println("\nconcat test:");
 		concatTest("Hello", " World");
-        concatTest("Hello", "");
-        concatTest("", "World");
-        concatTest("", "");
-        concatTest("123", "456");
-        concatTest("Hello!", " How are you?");
+		concatTest("Hello", "");
+		concatTest("", "World");
+		concatTest("", "");
+		concatTest("123", "456");
+		concatTest("Hello!", " How are you?");
 
 		System.out.println("\nindexOf test:");
 		indexOfTest("Hello World", "World");
-        indexOfTest("Hello World", "world");
-        indexOfTest("Hello World", "o");
-        indexOfTest("Hello World", "");
-        indexOfTest("", "test");
-        indexOfTest("1234567890", "6");
-        indexOfTest("Hello World", "Hello World World");
+		indexOfTest("Hello World", "world");
+		indexOfTest("Hello World", "o");
+		indexOfTest("Hello World", "");
+		indexOfTest("", "test");
+		indexOfTest("1234567890", "6");
+		indexOfTest("Hello World", "Hello World World");
 
 		System.out.println("\nlastIndexOf test:");
 		lastIndexOfTest("Hello World World", "World");
-        lastIndexOfTest("Hello World World", "world");
-        lastIndexOfTest("Hello World", "o");
-        lastIndexOfTest("Hello World", "");
-        lastIndexOfTest("", "test");
-        lastIndexOfTest("1234567890", "6");
-        lastIndexOfTest("Hello World", "Hello World World");
+		lastIndexOfTest("Hello World World", "world");
+		lastIndexOfTest("Hello World", "o");
+		lastIndexOfTest("Hello World", "");
+		lastIndexOfTest("", "test");
+		lastIndexOfTest("1234567890", "6");
+		lastIndexOfTest("Hello World", "Hello World World");
 
 		System.out.println("\nsubString test:");
 		substringTest("Hello World", 0, 5);
-        substringTest("Hello World", 6, 11);
-        substringTest("abcdef", 1, 4);
-        substringTest("Time, money and space is scarce", 8, 15);
-        substringTest("Hello World", 0, 11);
-        substringTest("Hello World", 11, 11);
+		substringTest("Hello World", 6, 11);
+		substringTest("abcdef", 1, 4);
+		substringTest("Time, money and space is scarce", 8, 15);
+		substringTest("Hello World", 0, 11);
+		substringTest("Hello World", 11, 11);
 		substringTest("Hello World", 6);
-        substringTest("The quick brown fox jumps over the lazy dog", 16);
-        substringTest("Another test string", 0);
-        substringTest("Just another example", 20);
-        substringTest("", 0); 
+		substringTest("The quick brown fox jumps over the lazy dog", 16);
+		substringTest("Another test string", 0);
+		substringTest("Just another example", 20);
+		substringTest("", 0); 
 	}
 
 }
