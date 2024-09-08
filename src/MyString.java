@@ -44,7 +44,7 @@ public class MyString implements Comparable {
 			for(int i = 0; i < curr_len; i++) {
 				temp[i] = str_arr[i];
 			}
-			//update str_arr 
+			//update str_arr
 			str_arr = temp;
 		}
 	}
@@ -93,7 +93,7 @@ public class MyString implements Comparable {
 				str.str_arr[i] = Character.toLowerCase(str.str_arr[i]);
 			}
 		}
-		return str;		
+		return str;
 	}
 	
 	
@@ -108,19 +108,84 @@ public class MyString implements Comparable {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	public int compareTo(MyString str) {
+		if (this == str) {
+			return 0;
+		}
+		//Compare length
+		int minLen, lenDiff = 0;
+		lenDiff = curr_len - str.length();
+		if(lenDiff > 0)
+			minLen = str.length();
+		else
+			minLen = curr_len;
+		//Check each letter
+		for(int i = 0; i < minLen; i++) {
+			//Return difference
+			char a = str_arr[i];
+			char b = str.get(i);
+			if(a != b) return a - b;
+		}
+	 	return lenDiff;
+	}
 	
 	//+concat(str : MyString) : MyString
-	
+	public MyString concat(MyString str) {
+		MyString temp = new MyString(this);
+		if (this.length() == 0)
+			return str;
+		for(int i = 0; i < str.length(); i++) {
+			temp.addChar(str.get(i));
+		}
+		return temp;
+	}
+
 	//+concat(str : String) : MyString
-	
+	public MyString concat(String str) {
+		return concat(new MyString(str));
+	}
+
 	//+indexOf(str : MyString) : int
+	public int indexOf(MyString str) {
+		for(int i = 0; i < curr_len; i++) {
+			boolean trueMatch = true;
+			for(int j = 0; j < str.length(); j++) {
+				if((i + j) >= curr_len || str.get(j) != str_arr[i + j]) {
+					trueMatch = false;
+					break;
+				}
+			}
+			if(trueMatch) return i;
+		}
+		return -1;
+	}
 	
 	//+lastIndexOf(str : MyString) : int
-	
-	//+substring(start : int) : MyString
-	
-	//+substring(start : int, end : int) : MyString
+	public int lastIndexOf(MyString str) {
+		for(int i = curr_len; i > 0; i--) {
+			boolean trueMatch = true;
+			for(int j = 0; j < str.length(); j++) {
+				if((i + j) >= curr_len || str.get(j) != str_arr[i + j]) {
+					trueMatch = false;
+					break;
+				}
+			}
+			if(trueMatch) return i;
+		}
+		return -1;
+	}
 
-	
-	
+	//+substring(start : int) : MyString
+	public MyString subString(int start) {
+		return subString(start, curr_len);
+	}
+	//+substring(start : int, end : int) : MyString
+	public MyString subString(int start, int end) {
+		MyString res = new MyString();
+		res.ensureCapacity();
+		for(int i = start; i < end; i++) {
+			res.addChar(str_arr[i]);
+		}
+		return res;
+	}
 }
